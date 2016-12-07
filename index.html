@@ -1,9 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>RSS FEED</title>
+<!-- Bootstrap -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+<!-- Bootstrap Material Design   -->
+<link rel="stylesheet" type="text/css" href="node_modules/bootstrap-material-design/dist/css/bootstrap-material-design.css" />
+<link rel="stylesheet" type="text/css" href="node_modules/bootstrap-material-design/dist/css/ripples.min.css" />
 </head>
 <body>
-  <p> Welcome! </p>
-<button onclick ="function()">Show XML </button>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h1>Welcome Diane :)</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="form-group">
+        <label for="inputRSS" class="control-label">VALID RSS URL</label>
+        <br/>
+        <div class="col-md-12">
+          <input type="text" class="form-control" id="inputRSS" placeholder="http://www.fs.fed.us/...">
+          <div id="help" class="bs-component">
+            <div class="alert alert-danger"> <strong>Oh snap!</strong> Add a RSS feed URL and try submitting again. </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-info" id="showxml">SHOW HEADLINES</button>
+        <br/>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox">
+            Enable Desktop Notifcations? </label>
+        </div>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox">
+            Save this feed URL to Favorites? </label>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">Recent Feeds</div>
+        <div class="panel-body">
+          <ul id="favs">
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-8">
+      <div id="results"></div>
+    </div>
+  </div>
+</div>
+<script>
+window.$ = window.jQuery = require("jquery");
+</script> 
+<script src="node_modules/bootstrap-material-design/dist/js/material.min.js"></script> 
+<script src="rss.js"></script> 
+<script>
+  $.material.init();  
+  
+</script>
 </body>
 </html>
