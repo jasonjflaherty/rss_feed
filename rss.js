@@ -1,3 +1,5 @@
+const path = require('path');
+
 $("#help").hide();
 $("#showxml").click(function () {
 
@@ -23,13 +25,15 @@ $("#showxml").click(function () {
 						pubDate: $this.find("pubDate").text(),
 						author: $this.find("author").text()
 					};
-				$('#results').append($('<div class="panel panel-default"/>').html('<div class="panel-body"><p><strong><a href="' + item.link + '">' + item.title + '</a></strong></p>' + '<p>' + trimdata(item.description) + '</p></div>'));
-
+				$('#results').append($('<div class="panel panel-default"/>').html('<div class="panel-body"><p><strong><a class="itemClick"><span class="title">' + item.title + '</span></a></strong></p>' + '<p>' + $('<div class ="panel panel-default" />').html('<div class="panel-body>"<a class="itemClick"><span class ="message">'+ item.description +trimdata(item.description) + '</p></div>')));
 			});
 		});
+
+	function createNotification(){
+		var notification = new Notification ('RSS Feed', {body: 'Click here to get your rss feed'});
+		notification.onclick = function(){
+			BrowserWindow.open(feedurl);
+		};
 	}
-});
-function trimdata(txt){
-	var ttxt = txt.substring(0,140);
-	return ttxt + "...";
 }
+});
