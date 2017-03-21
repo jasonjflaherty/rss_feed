@@ -1,7 +1,11 @@
 'use strict';
-
+const {dialog} = require('electron') //Add dialog window handler. 
 const electron = require('electron')
 const {app, BrowserWindow} = electron
+var onError = function(err,response){
+    console.error(err,response);
+};
+
 
 //Quit when all the windows are closed.
 app.on('window-all-closed', function(){
@@ -19,4 +23,3 @@ app.on('ready', function(){
 		theWindow = null;
 	});
 });
- 
