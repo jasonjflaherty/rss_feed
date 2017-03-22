@@ -21,7 +21,7 @@
         <label for="inputRSS" class="control-label">VALID RSS URL</label>
         <br/>
         <div class="col-md-12">
-          <input type="text" class="form-control" id="inputRSS" placeholder="http://www.fs.fed.us/...">
+          <input type="text" class="form-control" id="inputRSS" placeholder="http://www.fs.fed.us/..." value="http://rss.nytimes.com/services/xml/rss/nyt/World.xml">
           <div id="help" class="bs-component">
             <div class="alert alert-danger"> <strong>Oh snap!</strong> Add a RSS feed URL and try submitting again. </div>
           </div>
@@ -30,6 +30,7 @@
       <div class="form-group">
         <button class="btn btn-info" id="showxml">SHOW HEADLINES</button>
         <br/>
+		<button class="btn btn-warning" onclick="notifyMe()">Notify me!</button>
         <div class="checkbox">
           <label>
             <input type="checkbox">
