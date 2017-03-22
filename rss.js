@@ -32,6 +32,7 @@ $("#showxml").click(function () {
 				
 				$('#results').append($('<div class="panel panel-default"/>').html('<div class="panel-body"><p><strong><a class="itemClick"><span class="title">' + item.title + '</span></a></strong></p>' + '<p>' + $('<div class ="panel panel-default" />').html('<div class="panel-body>"<a class="itemClick"><span class ="message">'+ item.description+'</p></div>')));
 			});
+			//
 			notifier.notify({
 			  title: vTitle,
 			  message: vDescription,
@@ -53,21 +54,3 @@ $("#showxml").click(function () {
 	}
 	
 });
-
-//notifier.notify({
-//  title: 'My awesome title',
-//  message: 'Hello from node, Mr. User!',
-//  icon: path.join(__dirname, 'coulson.jpg'), // Absolute path (doesn't work on balloons)
-//  sound: true, // Only Notification Center or Windows Toasters
-//  wait: true // Wait with callback, until user action is taken against notification
-//}, function (err, response) {
-//  // Response is response from notification
-//});
-//
-//notifier.on('click', function (notifierObject, options) {
-//  // Triggers if `wait: true` and user clicks notification
-//});
-//
-//notifier.on('timeout', function (notifierObject, options) {
-//  // Triggers if `wait: true` and notification closes
-//});
